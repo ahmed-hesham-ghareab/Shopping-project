@@ -1,0 +1,615 @@
+html {
+    /* display: flex; */
+    width: 100%;
+}
+
+.nav-bg {
+
+    background-color: rgb(255, 255, 255);
+}
+
+.maloshlazma {
+
+    background-color: #82ae46;
+    height          : 25px;
+}
+
+.bg-img-1 {
+
+    background-image      : url(../images/bg_1.jpg);
+    width                 : 100%;
+    height                : 90vh;
+    background-position   : center center;
+    background-size       : cover;
+    /* display            : flex;
+    justify-content       : center;
+    align-items           : center; */
+    /* z-index            : 555555555555; */
+}
+
+.bg-img-2 {
+
+    background-image   : url(../images/bg_2.jpg);
+    width              : 100%;
+    height             : 90vh;
+    background-position: 100% 100%;
+    background-size    : cover;
+}
+
+.nav-li {
+    display        : flex;
+    justify-content: flex-end;
+    margin-right   : 60px;
+    margin-left    : 30px;
+    padding-left   : 30px;
+    padding-right  : 30px;
+
+}
+
+.nav-li ul li a {
+    color: #000;
+}
+
+.nav-bg a {
+    color: #82ae46;
+}
+
+.bg-img-1 h1 {
+    font-size  : 4vw;
+    color      : rgb(10, 6, 6);
+    line-height: 1;
+    font-weight: 100px;
+    font-family: "Amatic SC", cursive;
+    margin-top : 300;
+}
+
+.bg-img-2 h1 {
+    font-size  : 4vw;
+    color      : rgb(10, 6, 6);
+    line-height: 1;
+    font-weight: 100px;
+    font-family: "Amatic SC", cursive;
+    margin-top : 300;
+}
+
+.btn {
+    background   : #82ae46;
+    border       : 1px solid #82ae46;
+    color        : #fff;
+    box-shadow   : 0px 24px 36px -11px rgb(0 0 0 / 9%);
+    border-radius: 30px;
+}
+
+.btn:hover {
+    color           : #82ae46;
+    background-color: rgba(255, 255, 255, 0.1);
+    border          : 1px solid #82ae46;
+
+}
+
+.items {
+
+    padding: 10px;
+}
+
+.items i {
+
+    border       : solid 1px;
+    border-radius: 50%;
+    padding      : 20px;
+
+    color: #fff;
+
+}
+
+
+.span1 {
+    background-color: crimson;
+    font-size       : 50px;
+}
+
+.span2 {
+    background-color: rgb(72, 69, 69);
+    font-size       : 50px;
+}
+
+.span3 {
+    background-color: slateblue;
+
+    font-size: 50px;
+}
+
+.span4 {
+    background-color: brown;
+    font-size       : 50px;
+}
+
+.items:hover .span1 {
+    background-color: #82ae46;
+}
+
+.items:hover .span2 {
+    background-color: #82ae46;
+}
+
+.items:hover .span3 {
+    background-color: #82ae46;
+}
+
+.items:hover .span4 {
+    background-color: #82ae46;
+}
+
+
+
+.servies .icon {
+    position: relative;
+}
+
+
+
+
+.servies .icon:after {
+    content              : '';
+    position             : absolute;
+    top                  : 10px;
+    left                 : 100px;
+    right                : 100px;
+    bottom               : 10px;
+    border               : 2px solid rgb(255, 255, 255);
+    -webkit-border-radius: 50%;
+    -moz-border-radius   : 50%;
+    -ms-border-radius    : 50%;
+    border-radius        : 50%;
+}
+
+
+
+
+#part {
+    padding-left : 200px;
+    padding-right: 200px;
+}
+
+.bgr {
+    height: 275px;
+
+}
+
+.col {
+    position: relative;
+}
+
+.col a {
+    text-decoration : none;
+    background-color: rgb(72, 126, 17);
+    color           : rgb(255, 255, 255);
+    font-size       : 20px;
+    padding         : 10px;
+    position        : absolute;
+    left            : 12px;
+    bottom          : 0px;
+}
+
+.text .btn:hover {
+    background-color: #fff;
+    color           : rgb(72, 126, 17);
+    border-color    : rgb(72, 126, 17);
+}
+
+
+
+#products {
+    text-align    : center;
+    padding-top   : 200px;
+    padding-left  : 200px;
+    padding-right : 200px;
+    padding-bottom: 100px;
+}
+
+.h5 {
+    color      : rgb(72, 126, 17);
+    font-style : italic;
+    font-family: "Lora", Georgia, serif;
+}
+
+.intro p {
+    margin-top   : 0;
+    margin-bottom: 1rem;
+}
+
+.pruduct {
+    position: relative;
+    padding : 20px;
+    cursor  : pointer;
+}
+
+#products .pruduct:after {
+    content : '';
+    position: absolute;
+    top     : 10px;
+    left    : 10px;
+    right   : 10px;
+    bottom  : 0px;
+    border  : 2px solid rgba(0, 0, 0, 0.1);
+}
+
+.image {
+    overflow  : hidden;
+    transition: transform 1s;
+}
+
+.pruduct:hover .image {
+    transform: scale(1.2, 1.2);
+}
+
+.icns {
+    padding         : 10px;
+    background-color: rgba(255, 255, 255, 0.7);
+    position        : absolute;
+    top             : 250px;
+    bottom          : 0px;
+    right           : 60px;
+    left            : 60px;
+    display         : none;
+}
+
+.pruduct .icn h5 {
+    color   : #82ae46;
+    position: relative;
+}
+
+.icono {
+
+    background-color: #82ae46;
+    border-radius   : 50%;
+    padding         : 10px;
+    padding-left    : 20px;
+    padding-right   : 20px;
+    color           : #fff;
+
+}
+
+.icns a {
+    text-decoration: none;
+}
+
+.pruduct:hover .icns {
+    display: flex;
+}
+
+.presnage {
+    background-color: rgb(130, 174, 70);
+    position        : absolute;
+    left            : 10px;
+    top             : 10px;
+    text-align      : center;
+    color           : #fff;
+
+}
+
+.presnage h5 {
+    font-size : 15px;
+    text-align: center;
+
+}
+
+#bgimg {
+    background-image   : url(../images/bg_3.jpg);
+    background-position: center center;
+    background-size    : cover;
+    width              : 100%;
+    height             : 80vh;
+    margin-top         : 50px;
+    margin-bottom      : 50px;
+}
+
+.bgitmes {
+    padding-top: 100px;
+}
+
+.bgitmes span {
+    color     : #82ae46;
+    font-style: italic;
+    font-size : 20px;
+}
+
+.bgitmes p {
+    color    : rgb(131, 134, 136);
+    font-size: 17px;
+
+}
+
+.bgitmes h2 a {
+    text-decoration: none;
+    color          : #82ae46;
+    font-style     : italic;
+}
+
+.bgitmes h3 a {
+    text-decoration: none;
+    color          : #82ae46;
+    font-size      : 20px;
+}
+
+.bgitmes h3 {
+    font-size  : 20px;
+    padding-top: 10px;
+    color      : rgb(106, 90, 90);
+}
+
+#timer {
+    width: 80%;
+}
+
+.my-5 {
+    margin-top: 3rem !important;
+}
+
+#timer .time {
+    width      : 25%;
+    font-size  : 40px;
+    font-weight: 500;
+    border-left: 1px solid rgba(0, 0, 0, 0.05);
+    color      : #82ae46;
+}
+
+.animate {
+    width      : 50%;
+    margin     : auto;
+    padding-top: 50px;
+}
+
+.animate h5 {
+    color     : #82ae46;
+    font-style: italic;
+}
+
+.animate p {
+    font-size: 20px;
+    color    : rgb(128, 116, 116);
+}
+
+.carausel {
+    padding-left  : 100px;
+    padding-right : 100px;
+    padding-top   : 100px;
+    padding-bottom: 100px;
+    text-align    : center;
+}
+
+.itims {
+    background-image   : url(../images/person_1.jpg);
+    border-radius      : 50%;
+    width              : 100px;
+    height             : 100px;
+    background-size    : cover;
+    background-repeat  : no-repeat;
+    background-position: center center;
+    position           : relative;
+    margin-top         : -75px;
+    margin             : 0 auto;
+    padding            : 10px;
+}
+
+.itims-1 {
+    background-image   : url(../images/person_2.jpg);
+    border-radius      : 50%;
+    width              : 100px;
+    height             : 100px;
+    background-size    : cover;
+    background-repeat  : no-repeat;
+    background-position: center center;
+    position           : relative;
+    margin-top         : -75px;
+    margin             : 0 auto;
+    padding            : 10px;
+}
+
+.itims-2 {
+    background-image   : url(../images/person_3.jpg);
+    border-radius      : 50%;
+    width              : 100px;
+    height             : 100px;
+    background-size    : cover;
+    background-repeat  : no-repeat;
+    background-position: center center;
+    position           : relative;
+    margin-top         : -75px;
+    margin             : 0 auto;
+    padding            : 10px;
+}
+
+.quote {
+    position     : absolute;
+    bottom       : -10px;
+    right        : 0;
+    width        : 40px;
+    height       : 40px;
+    background   : #fff;
+    border-radius: 50%;
+}
+
+.quote i {
+    color: rgb(130, 174, 70);
+}
+
+.text .name {
+    font-weight  : 400;
+    font-size    : 18px;
+    margin-bottom: 0;
+    color        : #000000;
+}
+
+.text .position {
+    font-size     : 12px;
+    font-weight   : 400;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+.perant:after {
+    content : '';
+    position: absolute;
+    top     : 40%;
+    right   : 0px;
+    width   : 1px;
+    height  : 100px;
+    border  : solid rgb(189, 219, 149);
+
+}
+
+.perant::before {
+    content : '';
+    position: absolute;
+    top     : 50%;
+    right   : 0px;
+    width   : 2px;
+    height  : 30px;
+    border  : solid rgb(130, 174, 70);
+    z-index : 5555;
+
+}
+
+.aline {
+    margin-top      : 20px;
+    width           : 100%;
+    height          : 1px;
+    background-color: rgb(230, 212, 212);
+}
+
+.partner {
+    height         : 30vh;
+    display        : flex;
+    justify-content: center;
+    align-items    : center;
+}
+
+.element {
+    text-align: center;
+}
+
+.element p {
+    color       : rgb(171, 167, 185);
+    padding-left: 60px;
+}
+
+#bgelement {
+    height          : 30vh;
+    background-color: rgb(205, 213, 213);
+    display         : flex;
+    justify-content : center;
+    align-items     : center;
+}
+
+.email {
+    display        : flex;
+    justify-content: center;
+    align-items    : center;
+}
+
+.email .ptn {
+    background-color: #82ae46;
+    border          : #82ae46;
+    color           : #fff;
+}
+
+.tables {
+    padding-top   : 10px;
+    padding-left  : 10px;
+    padding-right : 10px;
+    padding-bottom: 10px;
+}
+
+.list-unstyled li a {
+    text-decoration: none;
+    color          : #000;
+}
+
+a {
+    text-decoration: none;
+}
+
+.text {
+    color: #000;
+}
+
+.block-23 .icom {
+    color        : #000;
+    padding-right: 30px;
+
+}
+
+.block-23 li {
+    list-style-type: none;
+
+}
+
+.list-unstyled li {
+    padding-left: 20px;
+}
+
+.social {
+    display    : flex;
+    align-items: center;
+
+
+}
+
+.social-media {
+
+    font-size      : 25px;
+    list-style-type: none;
+
+}
+
+.social-media .span {
+    color           : #000;
+    border-radius   : 50%;
+    background-color: rgb(237, 242, 240);
+}
+
+.ftco-heading-2 {
+    font-size   : 20px;
+    padding-left: 15px;
+}
+
+.paragraph {
+    padding-left: 15px;
+}
+
+.up {
+    font-size      : 20px;
+    display        : flex;
+    justify-content: center;
+    align-items    : center;
+}
+
+.iconup i {
+    background-color: #82ae46;
+    border-radius   : 50%;
+    color           : #fff;
+}
+
+/* //_______________________نهايه الصفحه الاولي __________________________*/
+
+
+.form-control8 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: aqua;
+}
+
+.form{
+    background-color: rgb(11, 11, 62);
+    width: %;
+}
+.test {
+    background-color: rgb(5, 5, 47);
+    width: 100%;
+    height: 100vh;
+}
+.h{
+color: aliceblue;
+}

@@ -1,0 +1,128 @@
+﻿<%- include ('../parts/header') %> 
+
+<%- include ('../parts/sidebar') %> 
+
+
+
+<div class="my-2 px-2">
+<div class="app-content content">
+    <div class="content-wrapper">
+        <div class="content-header row">
+            <div class="content-header-left col-md-6 col-12 mb-2">
+                <div class="row breadcrumbs-top">
+                    <div class="breadcrumb-wrapper col-12">
+                        <ol class="breadcrumb">
+                            <li class="breadcrumb-item"><a href="">Home </a>
+                            </li>
+                            <li class="breadcrumb-item"><a href="">orders</a>
+                            </li>
+                            <li class="breadcrumb-item active"> Create
+                            </li>
+                        </ol>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="content-body">
+            <!-- Basic form layout section start -->
+            <section id="basic-form-layouts">
+                <div class="row match-height">
+                    <div class="col-md-12">
+                        <div class="card">
+                            <div class="card-header">
+                                <a class="heading-elements-toggle"><i class="la la-ellipsis-v font-medium-3"></i></a>
+                                <div class="heading-elements">
+                                    <ul class="list-inline mb-0">
+                                        <li><a data-action="collapse"><i class="ft-minus"></i></a></li>
+                                        <li><a data-action="reload"><i class="ft-rotate-cw"></i></a></li>
+                                        <li><a data-action="expand"><i class="ft-maximize"></i></a></li>
+                                        <li><a data-action="close"><i class="ft-x"></i></a></li>
+                                    </ul>
+                                </div>
+                            </div>
+
+
+                            <div class="card-content collapse show">
+                                <div class="card-body">
+                                    <form class="form" action="/admin/order/update/<%= order._id %>" method="POST" >
+
+                                        <div class="form-body">
+
+
+                                            <h4 class="form-section"><i class="ft-home"></i> order Date </h4>
+
+                                            <div class="row">
+
+                                                <div class="col-md-6">
+                                                    <div class="form-group">
+                                                        <label>order name</label>
+                                                        <input type="text" name="name" class="form-control" value="<%= order.name %> ">
+                                                    </div>
+                                                </div>
+
+                                                <div class="col-md-6">
+                                                    <div class="form-group">
+                                                        <label>order price</label>
+                                                        <input type="text" name="price" class="form-control" value="<%= order.price %>" >
+                                                    </div>
+                                                </div>
+                                                
+                                                <div class="col-md-6">
+                                                    <div class="form-group">
+                                                        <label>order payment</label>
+                                                        <input type="text" name="payment" class="form-control" value="<%= order.payment %>" >
+                                                    </div>
+                                                </div>
+
+                                                <div class="col-md-6">
+                                                    <div class="form-group">
+                                                        <label>order address</label>
+                                                        <input type="text" name="address" class="form-control"  value="<%= order.address %>" >
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-6">
+                                                    <div class="form-group">
+                                                        <label>order status</label>
+                                                        <input type="text" name="status" class="form-control"  value="<%= order.status %>">
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-6">
+                                                    <div class="form-group">
+                                                        <label>order required_date</label>
+                                                        <input type="text" name="required_date" class="form-control"  value="<%= order.required_date %>">
+                                                    </div>
+                                                </div>
+                                            
+                                            
+                                
+                                            </div>
+
+
+                                        </div>
+
+
+                                        <div class="form-actions">
+                                            <button type="button" class="btn btn-warning mr-1"
+                                                onclick="history.back();">
+                                                <i class="ft-x"></i> cancel
+                                            </button>
+                                            <button type="submit" class="btn btn-primary">
+                                                <i class="la la-check-square-o"></i> Updated
+                                            </button>
+                                        </div>
+                                    </form>
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <!-- // Basic form layout section end -->
+        </div>
+    </div>
+</div>
+</div>
+
+
+<%- include ('../parts/footer') %> 

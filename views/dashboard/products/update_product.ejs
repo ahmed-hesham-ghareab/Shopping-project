@@ -1,0 +1,180 @@
+﻿<%- include ('../parts/header') %> 
+
+<%- include ('../parts/sidebar') %> 
+
+
+
+<div class="my-2 px-2">
+<div class="app-content content">
+    <div class="content-wrapper">
+        <div class="content-header row">
+            <div class="content-header-left col-md-6 col-12 mb-2">
+                <div class="row breadcrumbs-top">
+                    <div class="breadcrumb-wrapper col-12">
+                        <ol class="breadcrumb">
+                            <li class="breadcrumb-item"><a href="">Home </a>
+                            </li>
+                            <li class="breadcrumb-item"><a href="">Products</a>
+                            </li>
+                            <li class="breadcrumb-item active"> Create
+                            </li>
+                        </ol>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="content-body">
+            <!-- Basic form layout section start -->
+            <section id="basic-form-layouts">
+                <div class="row match-height">
+                    <div class="col-md-12">
+                        <div class="card">
+                            <div class="card-header">
+                                <a class="heading-elements-toggle"><i class="la la-ellipsis-v font-medium-3"></i></a>
+                                <div class="heading-elements">
+                                    <ul class="list-inline mb-0">
+                                        <li><a data-action="collapse"><i class="ft-minus"></i></a></li>
+                                        <li><a data-action="reload"><i class="ft-rotate-cw"></i></a></li>
+                                        <li><a data-action="expand"><i class="ft-maximize"></i></a></li>
+                                        <li><a data-action="close"><i class="ft-x"></i></a></li>
+                                    </ul>
+                                </div>
+                            </div>
+
+
+                            <div class="card-content collapse show">
+                                <div class="card-body">
+                                    <form class="form" action="/admin/product/update/<%= product._id %>" method="POST" enctype="multipart/form-data" >
+
+                                        <div class="form-body">
+
+
+                                            <h4 class="form-section"><i class="ft-home"></i> Product Date </h4>
+
+                                            <div class="row">
+
+                                                <div class="col-md-6">
+                                                    <div class="form-group">
+                                                        <label>Product name</label>
+                                                        <input type="text" name="name" class="form-control" value="<%= product.name %> ">
+                                                    </div>
+                                                </div>
+
+                                                <div class="col-md-6">
+                                                    <div class="form-group">
+                                                        <label>Product desc</label>
+                                                        <input type="text" name="desc" class="form-control" value="<%= product.desc %>" >
+                                                    </div>
+                                                </div>
+                                                
+                                                <div class="col-md-6">
+                                                    <div class="form-group">
+                                                        <label>price_before</label>
+                                                        <input type="text" name="price_before" class="form-control" value="<%= product.price_before %>" >
+                                                    </div>
+                                                </div>
+
+                                                <div class="col-md-6">
+                                                    <div class="form-group">
+                                                        <label>Product price_after</label>
+                                                        <input type="text" name="price_after" class="form-control"  value="<%= product.price_after %>" >
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-6">
+                                                    <div class="form-group">
+                                                        <label>Product quantity</label>
+                                                        <input type="text" name="quantity" class="form-control"  value="<%= product.quantity %>">
+                                                    </div>
+                                                </div>
+                                            
+                                                <div class="col-md-6">
+                                                    <div class="form-group">
+                                                        <label>Product stock_type</label>
+                                                        <select class="form-control" name="stock_type" id="">
+                                                            <!-- <option selected value="">Select stock_type</option> -->
+                                                         <% for( let index = 0; index < stock_types.length; index++ ) { %>
+                                                        <option 
+                                                        <% if (JSON.stringify(product.stock_type) == JSON.stringify(stock_types[index]._id)) { %>
+                                                            selected
+                                                        <% } %>
+                                                        value="<%=stock_types[index]._id %>"><%=stock_types[index].title%></option>
+                                                          <% } %> 
+                                                        </select>
+                                                        <!-- <input type="text" name="stock_type" class="form-control"  value="<%= product.stock_type %>"> -->
+                                                    </div>
+                                                </div>
+                                            
+                                                <div class="col-md-6">
+                                                    <div class="form-group">
+                                                        <label>Product category </label>
+                                                        <select class="form-control" name="category" id="">
+                                                            <!-- <option selected value="">Select Category</option> -->
+                                                         <% for( let index = 0; index < categorys.length; index++ ) { %>
+                                                        <option 
+                                                        <% if (JSON.stringify(product.category) == JSON.stringify(categorys[index]._id)) { %>
+                                                            selected
+                                                        <% } %>
+                                                        value="<%= categorys[index]._id %>"> <%= categorys[index].name %> </option>
+                                                          <% } %> 
+                                                        </select>
+                                                    </div>
+                                                </div>
+                                            
+                                                <div class="col-md-4">
+                                                    <div class="form-group">
+                                                        <label>Product imageCover</label>
+                                                        <input type="file" name="imageCover" class="form-control" >
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-2">
+                                                    <img class="img-thumbnial" src="/uploads/products/<%= product.imageCover %>" height="80" width="100" alt="">
+                                                </div>
+
+                                
+                                                <div class="col-md-4" >
+                                                    <div class="form-group">
+                                                        <label>Product images</label>
+                                                        <input type="file" name="images" class="form-control" multiple>
+                                                    </div>
+                                                </div>
+ 
+                                                <% for( let index = 0; index < product.images.length; index++ ) { %>
+                                                  <div class="col-md-2">
+                                                    <img class="img-thumbnial" src="/uploads/products/<%= product.images[index] %>" height="80" width="100" alt="">
+                                                </div>
+                                             
+                                                <% } %>
+                                              
+
+                                
+                                            </div>
+
+
+                                        </div>
+
+
+                                        <div class="form-actions">
+                                            <button type="button" class="btn btn-warning mr-1"
+                                                onclick="history.back();">
+                                                <i class="ft-x"></i> cancel
+                                            </button>
+                                            <button type="submit" class="btn btn-primary">
+                                                <i class="la la-check-square-o"></i> Updated
+                                            </button>
+                                        </div>
+                                    </form>
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <!-- // Basic form layout section end -->
+        </div>
+    </div>
+</div>
+</div>
+
+
+<%- include ('../parts/footer') %> 

@@ -1,0 +1,156 @@
+<%- include ('./parts/header') %> 
+
+
+<div class="hero-wrap hero-bread" style="background-image: url('/uploads/category/<%= product.category.image %>');">
+    <div class="container">
+      <div class="row no-gutters slider-text align-items-center justify-content-center">
+        <div class="col-md-9 ftco-animate text-center">
+            <p class="breadcrumbs"><span class="mr-2"><a href="/home">Home</a></span> 
+                <span class="mr-2"><a href="/home">Product</a></span> <span>Product Single</span></p>
+          <h1 class="mb-0 bread">Product Single</h1>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <section class="ftco-section">
+      <div class="container">
+        
+
+          <div class="row">
+              <div class="col-lg-6 mb-5 ftco-animate">
+                  <a href="/uploads/products/<%= product.imageCover %>" class="image-popup"><img src="/uploads/products/<%= product.imageCover %>" class="img-fluid" alt="Colorlib Template"></a>
+                  <div class="row">
+                    <% for( let index = 0; index < product.images.length; index++ ) { %>
+                        <div class="col-md-4">
+                            <img src="/uploads/products/<%= product.images[index] %>" class="img-fluid" alt="Colorlib Template">
+                        </div>
+                    <% } %>
+                   
+                </div>
+                </div>
+              <div class="col-lg-6 product-details pl-md-5 ftco-animate">
+                  <h3><%= product.name %></h3>
+                  <div class="rating d-flex">
+                          <p class="text-left mr-4">
+                              <a href="#" class="mr-2">5.0</a>
+                              <a href="#"><span class="ion-ios-star-outline"></span></a>
+                              <a href="#"><span class="ion-ios-star-outline"></span></a>
+                              <a href="#"><span class="ion-ios-star-outline"></span></a>
+                              <a href="#"><span class="ion-ios-star-outline"></span></a>
+                              <a href="#"><span class="ion-ios-star-outline"></span></a>
+                          </p>
+                          <p class="text-left mr-4">
+                              <a href="#" class="mr-2" style="color: #000;">100 <span style="color: #bbb;">Rating</span></a>
+                          </p>
+                          <p class="text-left">
+                              <a href="#" class="mr-2" style="color: #000;">500 <span style="color: #bbb;">Sold</span></a>
+                          </p>
+                      </div>
+                  <p class="price"><span><%= product.price_after%>$</span></p>
+                  <p> <%= product.desc %> </p>
+                      <div class="row mt-4">
+                          <div class="w-100"></div>
+                          <div class="input-group col-md-6 d-flex mb-3">
+                   <span class="input-group-btn mr-2">
+                      <button type="button" class="quantity-left-minus btn"  data-type="minus" data-field="">
+                     <i class="ion-ios-remove"></i>
+                      </button>
+                      </span>
+                   <input type="text" id="quantity" name="quantity" class="form-control input-number" value="1" min="1" max="100000">
+                   <span class="input-group-btn ml-2">
+                      <button type="button" class="quantity-right-plus btn" data-type="plus" data-field="">
+                       <i class="ion-ios-add"></i>
+                   </button>
+                   </span>
+                </div>
+                <div class="w-100"></div>
+                <div class="col-md-12">
+                    <p style="color: #000;"><%= product.quantity%> <%= product.stock_type.title %> available</p>
+                </div>
+            </div>
+            <p><a href="#" class="btn addToCart btn-black py-3 px-5">Add to Cart</a></p>
+
+            <script>
+                document.querySelector('.addToCart').addEventListener('click', function(e){
+                    e.preventDefault();
+                    window.location.href = '/website/cart/add/<%= product._id %>/'+document.querySelector('#quantity').value
+                })
+            </script>
+
+              </div>
+          </div>
+      </div>
+      
+  </section>
+
+  <section class="ftco-section">
+      <div class="container">
+              <div class="row justify-content-center mb-3 pb-3">
+        <div class="col-md-12 heading-section text-center ftco-animate">
+            <span class="subheading">Products</span>
+          <h2 class="mb-4">Related Products</h2>
+          <p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia</p>
+        </div>
+      </div>   		
+      </div>
+      <div class="container">
+          <div class="row">
+            <% for( let index = 0; index < category_poroducts.length; index++ ) { %>
+                <div class="col-md-6 col-lg-3 ftco-animate">
+                    <div class="product">
+                        <a href="#" class="img-prod"><img class="img-fluid" src="/uploads/products/<%= category_poroducts[index].imageCover%>" alt="Colorlib Template">
+                            <span class="status">30%</span>
+                            <div class="overlay"></div>
+                        </a>
+                        <div class="text py-3 pb-4 px-3 text-center">
+                            <h3><a href="#"><%= category_poroducts[index].name%></a></h3>
+                            <div class="d-flex">
+                                <div class="pricing">
+                                    <p class="price"><span class="mr-2 price-dc"><%= category_poroducts[index].price_before%>$</span><span class="price-sale"><%= category_poroducts[index].price_after%>$</span></p>
+                                </div>
+                            </div>
+                            <div class="bottom-area d-flex px-3">
+                                <div class="m-auto d-flex">
+                                    <a href="#" class="add-to-cart d-flex justify-content-center align-items-center text-center">
+                                        <span><i class="ion-ios-menu"></i></span>
+                                    </a>
+                                    <a href="/website/cart/add/<%= category_poroducts[index]._id %>/1" class="buy-now d-flex justify-content-center align-items-center mx-1">
+                                        <span><i class="ion-ios-cart"></i></span>
+                                    </a>
+                                       
+                                    <a href="/website/wishlist/add/<%= category_poroducts[index]._id %>" class="heart d-flex justify-content-center align-items-center ">
+                                        <span><i class="ion-ios-heart"></i></span>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            <% } %>
+
+          </div>
+      </div>
+      
+  </section>
+
+      <section class="ftco-section ftco-no-pt ftco-no-pb py-5 bg-light">
+    <div class="container py-4">
+      <div class="row d-flex justify-content-center py-5">
+        <div class="col-md-6">
+            <h2 style="font-size: 22px;" class="mb-0">Subcribe to our Newsletter</h2>
+            <span>Get e-mail updates about our latest shops and special offers</span>
+        </div>
+        <div class="col-md-6 d-flex align-items-center">
+          <form action="#" class="subscribe-form">
+            <div class="form-group d-flex">
+              <input type="text" class="form-control" placeholder="Enter email address">
+              <input type="submit" value="Subscribe" class="submit px-3">
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <%- include ('./parts/footer') %> 

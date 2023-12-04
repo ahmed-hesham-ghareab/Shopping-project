@@ -1,0 +1,177 @@
+﻿<%- include ('../parts/header') %> 
+
+<%- include ('../parts/sidebar') %> 
+
+
+
+<div class="my-2 px-2">
+<div class="app-content content">
+    <div class="content-wrapper">
+        <div class="content-header row">
+            <div class="content-header-left col-md-6 col-12 mb-2">
+                <div class="row breadcrumbs-top">
+                    <div class="breadcrumb-wrapper col-12">
+                        <ol class="breadcrumb">
+                            <li class="breadcrumb-item"><a href="">Home </a>
+                            </li>
+                            <li class="breadcrumb-item"><a href="">offer</a>
+                            </li>
+                            <li class="breadcrumb-item active"> Create
+                            </li>
+                        </ol>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="content-body">
+            <!-- Basic form layout section start -->
+            <section id="basic-form-layouts">
+                <div class="row match-height">
+                    <div class="col-md-12">
+                        <div class="card">
+                            <div class="card-header">
+                                <a class="heading-elements-toggle"><i class="la la-ellipsis-v font-medium-3"></i></a>
+                                <div class="heading-elements">
+                                    <ul class="list-inline mb-0">
+                                        <li><a data-action="collapse"><i class="ft-minus"></i></a></li>
+                                        <li><a data-action="reload"><i class="ft-rotate-cw"></i></a></li>
+                                        <li><a data-action="expand"><i class="ft-maximize"></i></a></li>
+                                        <li><a data-action="close"><i class="ft-x"></i></a></li>
+                                    </ul>
+                                </div>
+                            </div>
+
+
+                            <div class="card-content collapse show">
+                                <div class="card-body">
+                            <%- include ('../parts/success') %>
+
+                                    <form class="form" action="/admin/offer/add" method="POST" enctype="multipart/form-data">
+
+                                        <div class="form-body">
+
+
+                                            <h4 class="form-section"><i class="ft-home"></i> offer Date </h4>
+
+                                            <div class="row">
+
+                                                <div class="col-md-6">
+                                                    <div class="form-group">
+                                                        <label>offer name</label>
+                                                        <input type="text" name="name" class="form-control">
+                                                        <% let name_error = validationErrors.find(err => err.param == 'name') %>
+                                                        <% if (name_error) { %>
+                                                        <span class="text-danger"><%= name_error.msg %> </span>
+                                                        <% } %>
+                                                    </div>
+                                                </div>
+
+                                                <div class="col-md-6">
+                                                    <div class="form-group">
+                                                        <label>offer desc</label>
+                                                        <input type="text" name="desc" class="form-control" >
+                                                        <% let desc_error = validationErrors.find(err => err.param == 'desc') %>
+                                                        <% if (desc_error) { %>
+                                                        <span class="text-danger"><%= desc_error.msg %> </span>
+                                                        <% } %>
+                                                    </div>
+                                                </div>
+                                                
+                                                <div class="col-md-6">
+                                                    <div class="form-group">
+                                                        <label>offer price</label>
+                                                        <input type="text" name="price" class="form-control" >
+                                                        <% let price_error = validationErrors.find(err => err.param == 'price') %>
+                                                        <% if (price_error) { %>
+                                                        <span class="text-danger"><%= price_error.msg %> </span>
+                                                        <% } %>
+                                                    </div>
+                                                </div>
+
+                                                <div class="col-md-6">
+                                                    <div class="form-group">
+                                                        <label> offer_stock</label>
+                                                        <input type="text" name="offer_stock" class="form-control" >
+                                                        <% let offer_stock_error = validationErrors.find(err => err.param == 'offer_stock') %>
+                                                        <% if (offer_stock_error) { %>
+                                                        <span class="text-danger"><%= offer_stock_error.msg %> </span>
+                                                        <% } %>
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-6">
+                                                    <div class="form-group">
+                                                        <label> offer_start</label>
+                                                        <input type="datetime-local" name="offer_start" class="form-control datetime"  >
+                                                        <% let offer_start_error = validationErrors.find(err => err.param == 'offer_start') %>
+                                                        <% if (offer_start_error) { %>
+                                                        <span class="text-danger"><%= offer_start_error.msg %> </span>
+                                                        <% } %>
+                                                    </div>
+                                                </div>
+                                    
+
+                                                <div class="col-md-6">
+                                                    <div class="form-group">
+                                                        <label> offer_end</label>
+                                                        <input type="datetime-local" name="offer_end" class="form-control" >
+                                                        <% let offer_end_error = validationErrors.find(err => err.param == 'offer_end') %>
+                                                        <% if (offer_end_error) { %>
+                                                        <span class="text-danger"><%= offer_end_error.msg %> </span>
+                                                        <% } %>
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-6">
+                                                    <div class="form-group">
+                                                        <label>Products</label>
+                                                        <select class="form-control select2" name="product" multiple >
+                                                            <!-- <option selected value="">Select product</option> -->
+                                                         <% for( let index = 0; index < Products.length; index++ ) { %>
+                                                        <option value="<%=Products[index]._id %>"><%=Products[index].name%></option>
+                                                          <% } %> 
+                                                        </select>
+                                                        <% let product_error = validationErrors.find(err => err.param == 'product') %>
+                                                        <% if (product_error) { %>
+                                                        <span class="text-danger"><%= product_error.msg %> </span>
+                                                        <% } %>
+                                                    </div>
+                                                </div>
+
+                                                
+                                                <div class="col-md-6">
+                                                    <div class="form-group">
+                                                        <label>category image</label>
+                                                        <input type="file" name="image" class="form-control" >
+                                                    </div>
+                                                </div>
+
+                                            </div>
+
+
+                                        </div>
+
+
+                                        <div class="form-actions">
+                                            <button type="button" class="btn btn-warning mr-1"
+                                                onclick="history.back();">
+                                                <i class="ft-x"></i> cancel
+                                            </button>
+                                            <button type="submit" class="btn btn-primary">
+                                                <i class="la la-check-square-o"></i> Add
+                                            </button>
+                                        </div>
+                                    </form>
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <!-- // Basic form layout section end -->
+        </div>
+    </div>
+</div>
+</div>
+
+
+<%- include ('../parts/footer') %> 

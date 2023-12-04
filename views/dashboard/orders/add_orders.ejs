@@ -1,0 +1,159 @@
+﻿<%- include ('../parts/header') %> 
+
+<%- include ('../parts/sidebar') %> 
+
+
+
+<div class="my-2 px-2">
+<div class="app-content content">
+    <div class="content-wrapper">
+        <div class="content-header row">
+            <div class="content-header-left col-md-6 col-12 mb-2">
+                <div class="row breadcrumbs-top">
+                    <div class="breadcrumb-wrapper col-12">
+                        <ol class="breadcrumb">
+                            <li class="breadcrumb-item"><a href="">Home </a>
+                            </li>
+                            <li class="breadcrumb-item"><a href="">order</a>
+                            </li>
+                            <li class="breadcrumb-item active"> Create
+                            </li>
+                        </ol>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="content-body">
+            <!-- Basic form layout section start -->
+            <section id="basic-form-layouts">
+                <div class="row match-height">
+                    <div class="col-md-12">
+                        <div class="card">
+                            <div class="card-header">
+                                <a class="heading-elements-toggle"><i class="la la-ellipsis-v font-medium-3"></i></a>
+                                <div class="heading-elements">
+                                    <ul class="list-inline mb-0">
+                                        <li><a data-action="collapse"><i class="ft-minus"></i></a></li>
+                                        <li><a data-action="reload"><i class="ft-rotate-cw"></i></a></li>
+                                        <li><a data-action="expand"><i class="ft-maximize"></i></a></li>
+                                        <li><a data-action="close"><i class="ft-x"></i></a></li>
+                                    </ul>
+                                </div>
+                            </div>
+
+
+                            <div class="card-content collapse show">
+                                <div class="card-body">
+                            <%- include ('../parts/success') %>
+
+                                    <form class="form" action="/admin/order/add" method="POST" >
+
+                                        <div class="form-body">
+
+
+                                            <h4 class="form-section"><i class="ft-home"></i> order Date </h4>
+
+                                            <div class="row">
+                                                       
+                                                <div class="col-md-6">
+                                                    <div class="form-group">
+                                                        <label>order userName</label>
+                                                        <select class="form-control select2" name="userName" id="">
+                                                            <option selected value="">Select userName</option>
+                                                         <% for( let index = 0; index < userName.length; index++ ) { %>
+                                                        <option value="<%= userName[index]._id %>"> <%= userName[index].name %> </option>
+                                                          <% } %> 
+                                                        </select>
+                                                      
+                                                        <% let userName_error = validationErrors.find(err => err.param == 'userName') %>
+                                                        <% if (userName_error) { %>
+                                                        <span class="text-danger"><%= userName_error.msg %> </span>
+                                                        <% } %>
+                                                    </div>
+                                                </div>
+
+                                                <div class="col-md-6">
+                                                    <div class="form-group">
+                                                        <label>order price</label>
+                                                        <input type="text" name="price" class="form-control" >
+                                                        <% let price_error = validationErrors.find(err => err.param == 'price') %>
+                                                        <% if (price_error) { %>
+                                                        <span class="text-danger"><%= price_error.msg %> </span>
+                                                        <% } %>
+                                                    </div>
+                                                </div>
+                                                
+                                                <div class="col-md-6">
+                                                    <div class="form-group">
+                                                        <label>order payment</label>
+                                                        <input type="text" name="payment" class="form-control" >
+                                                        <% let payment_error = validationErrors.find(err => err.param == 'payment') %>
+                                                        <% if (payment_error) { %>
+                                                        <span class="text-danger"><%= payment_error.msg %> </span>
+                                                        <% } %>
+                                                    </div>
+                                                </div>
+
+                                                <div class="col-md-6">
+                                                    <div class="form-group">
+                                                        <label>order address</label>
+                                                        <input type="text" name="address" class="form-control" >
+                                                        <% let address_error = validationErrors.find(err => err.param == 'address') %>
+                                                        <% if (address_error) { %>
+                                                        <span class="text-danger"><%= address_error.msg %> </span>
+                                                        <% } %>
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-6">
+                                                    <div class="form-group">
+                                                        <label>order status</label>
+                                                        <input type="text" name="status" class="form-control" >
+                                                        <% let status_error = validationErrors.find(err => err.param == 'status') %>
+                                                        <% if (status_error) { %>
+                                                        <span class="text-danger"><%= status_error.msg %> </span>
+                                                        <% } %>
+                                                    </div>
+                                                </div>
+                                    
+
+                                                <div class="col-md-6">
+                                                    <div class="form-group">
+                                                        <label>order required_date</label>
+                                                        <input type="text" name="required_date" class="form-control" >
+                                                        <% let required_date_error = validationErrors.find(err => err.param == 'required_date') %>
+                                                        <% if (required_date_error) { %>
+                                                        <span class="text-danger"><%= required_date_error.msg %> </span>
+                                                        <% } %>
+                                                    </div>
+                                                </div>
+                                            </div>
+
+
+                                        </div>
+
+
+                                        <div class="form-actions">
+                                            <button type="button" class="btn btn-warning mr-1"
+                                                onclick="history.back();">
+                                                <i class="ft-x"></i> cancel
+                                            </button>
+                                            <button type="submit" class="btn btn-primary">
+                                                <i class="la la-check-square-o"></i> Add
+                                            </button>
+                                        </div>
+                                    </form>
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <!-- // Basic form layout section end -->
+        </div>
+    </div>
+</div>
+</div>
+
+
+<%- include ('../parts/footer') %> 
